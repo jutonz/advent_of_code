@@ -5,10 +5,9 @@ defmodule Day1 do
     col1_values = Enum.sort(col1_values)
     col2_values = Enum.sort(col2_values)
 
-    result =
-      Enum.reduce(Enum.with_index(col1_values), 0, fn {col1_value, index}, acc ->
-        acc + abs(col1_value - Enum.at(col2_values, index))
-      end)
+    Enum.reduce(Enum.with_index(col1_values), 0, fn {col1_value, index}, acc ->
+      acc + abs(col1_value - Enum.at(col2_values, index))
+    end)
   end
 
   def part2 do
